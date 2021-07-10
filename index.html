@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name='viewport' content='width=device-width'>
+  <meta charset='utf-8'>
+  <meta name='referrer' content='no-referrer'>
+  <link rel='icon' href='favicon.ico'>
+  <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+  <script src='configs/config.js' defer></script>
+  <script src='main.js' defer></script>
+  <script>
+    const theme = localStorage.getItem('theme')
+      || window.matchMedia('(prefers-color-scheme: dark)').matches && 'dark'
+    if (theme) document.documentElement.dataset.theme = theme
+  </script>
+  <script src='localization/_countries.js' defer></script>
+  <script src='configs/ADs.js' defer></script>
+  <script>
+    window._CORSViaGM = (inited => ({ inited: Object.assign(new Promise(r => inited = r), { done: inited }) }))()
+  </script>
+  <script>
+    let AppVer = '6.3.7_2021-07-10';
+    (() => {
+      const w = 'white', b = '#00a1d6', s = 'padding:5px 0; border: 1px solid #00a1d6'
+      console.log('\n%c Version %c ' + AppVer + ' %c\n ',
+        `color: ${w}; background: ${b}; ${s}`, `color: ${b}; background: ${w}; ${s}`, 'all: unset')
+    })()
+  </script>
+</head>
+
+<body>
+  <i-🍫 id='proBar'></i-🍫>
+  <nav id='nav' class='before show'>
+    <div id='menuKey' class='before'>
+      <span data-icon='menuKey' class='no-caret'>☰</span>
+      <span data-icon='menuKey' class='no-caret'>❌</span>
+    </div>
+    <aside id='_sidebar' class='hide' tabindex='-1'>
+      <ul id='menu' class='no-caret'>
+        <li id='darkTheme' data-now='light' data-alt='dark'>
+          Dark Theme
+          <i-🔘 for='darkTheme'></i-🔘>
+        </li>
+        <li id='codeMode'>
+          Code Mode
+          <i-🔘 for='codeMode'></i-🔘>
+        </li>
+        <li id='ban r18' has-sub='b18'>
+          Ban R18
+          <i-🔘 for='ban r18'></i-🔘>
+        </li>
+        <li id='infinite scroll' as-sub='b18'>
+          <span><span>Infinite Scroll</span></span>
+          <i-🔘 for='infinite scroll'></i-🔘>
+        </li>
+        <div id='gear'></div>
+      </ul>
+      <div>
+        <a id='aboutLink'>Semi Open Source</a>
+      </div>
+    </aside>
+    <div id='q-form-plus'>
+      <form id='q-form'>
+        <input type='search' id='search-box' placeholder-en='Type some JS or :cmd'>
+        <button id='btn-search' data-classListTree>
+          <div class='search-icon'></div>
+          <div run text-content-en='Run'></div>
+        </button>
+        <span data-icon='find' data-classListTree class='no-caret'>🔍</span>
+      </form>
+    </div>
+    <ul id='tab-group'>
+      <li id='shyBtn'>Shy</li>
+      <li data-target-id='imgPanel'>Show</li>
+    </ul>
+  </nav>
+  <div role='nav-after-filling'></div>
+
+  <div id='_console' translate='no'></div>
+
+  <div id='contentPanel'>
+    <div id='searchPanel' translate='no'></div>
+    <div id='imgPanel'></div>
+  </div>
+
+  <div id='bottom-background'>
+    <div id='sentinel'></div>
+  </div>
+
+  <div id='globalOverlay' class='fadeout'></div>
+
+  <div id=_scriptsInsertedAtEndOfDoc translate=no></div>
+  <html-comp id=html-comp></html-comp>
+</body>
+
+</html>
